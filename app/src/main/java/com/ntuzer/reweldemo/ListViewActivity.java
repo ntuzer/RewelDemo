@@ -3,6 +3,7 @@ package com.ntuzer.reweldemo;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.android.gms.appindexing.Action;
@@ -13,7 +14,7 @@ import com.ntuzer.reweldemo.adapter.ListViewAdapter;
 
 import static com.ntuzer.reweldemo.R.*;
 
-public class ListViewActivity extends AppCompatActivity {
+public class ListViewActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView listView;
 
