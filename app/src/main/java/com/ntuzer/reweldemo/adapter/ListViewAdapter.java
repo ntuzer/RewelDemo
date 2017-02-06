@@ -81,4 +81,4 @@ class ViewHolder{
     TextView textView1;
     TextView textView2;
     TextView textView3;
-        }
+    }
