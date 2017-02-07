@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import com.ntuzer.reweldemo.R;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by ntuzer on 1/25/2017.
@@ -16,16 +18,19 @@ import com.ntuzer.reweldemo.R;
 public class ListViewAdapter extends BaseAdapter {
 
     private final LayoutInflater mInflater;
+    private ArrayList<String> listResult;
     private Context mContext;
 
-    public ListViewAdapter(Context context) {
+    public ListViewAdapter(Context context, ArrayList<String> listResult) {
         mContext = context;
+        this.listResult = listResult;
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
     }
 
     @Override
     public int getCount() {
-        return 100;
+        return listResult.size();
     }
 
     @Override
@@ -59,7 +64,9 @@ public class ListViewAdapter extends BaseAdapter {
         }
 
         holder.textView1.setText(String.valueOf(position));
+        holder.textView2.setText(listResult.get(position));
         holder.textView3.setText(String.valueOf(position));
+
         if(position%2==0){
             holder.textView1.setVisibility(View.VISIBLE);
             holder.textView3.setVisibility(View.INVISIBLE);
