@@ -5,10 +5,11 @@
     tools:context="com.ntuzer.reweldemo.fragment.ContentFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/holo_blue_bright"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:background="@mipmap/pic1"/>
+
 
 </FrameLayout>
