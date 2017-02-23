@@ -12,11 +12,14 @@ import com.ntuzer.reweldemo.bean.Book;
 import com.ntuzer.reweldemo.fragment.ContentFragment;
 import com.ntuzer.reweldemo.fragment.HistoryFragment;
 import com.ntuzer.reweldemo.fragment.LoginFragment;
+import com.ntuzer.reweldemo.fragment2.OneImageFragment;
+import com.ntuzer.reweldemo.fragment2.ThreeImageFragment;
+import com.ntuzer.reweldemo.fragment2.TwoImageFragment;
 import com.ntuzer.reweldemo.util.UtilLog;
 
 import java.util.ArrayList;
 
-public class ViewPagerActivity extends AppCompatActivity {
+public class ViewPager2 extends AppCompatActivity {
 
     private ViewPager viewPager;
     private ArrayList<Fragment> fragmentList = new ArrayList<Fragment>();
@@ -25,28 +28,18 @@ public class ViewPagerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_pager);
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        String message = intent.getStringExtra("key");
-        int number = bundle.getInt("Integer",0);
-        int fakeNumber = bundle.getInt("fake",0);
-        Book book = (Book) bundle.getSerializable("book");
+        setContentView(R.layout.activity_view_pager2);
 
-        UtilLog.logD("ViewPagerActivity, value is: ",message);
-        UtilLog.logD("ViewPagerActivity, number is: ",""+number);
-        UtilLog.logD("ViewPagerActivity, number is: ",String.valueOf(fakeNumber));
-        UtilLog.logD("ViewPagerActivity, book author is: ",book.getAuthor());
 
 
         initial();
     }
 
     private void initial(){
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        fragmentList.add(new LoginFragment());
-        fragmentList.add(new ContentFragment());
-        fragmentList.add(new HistoryFragment());
+        viewPager = (ViewPager) findViewById(R.id.view_pager2);
+        fragmentList.add(new OneImageFragment());
+        fragmentList.add(new TwoImageFragment());
+        fragmentList.add(new ThreeImageFragment());
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this.getSupportFragmentManager());
         viewPagerAdapter.setContent(fragmentList);
         viewPager.setAdapter(viewPagerAdapter);

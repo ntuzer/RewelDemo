@@ -36,6 +36,7 @@
             android:layout_alignParentLeft="true"/>
 
         <ImageButton
+            android:id="@+id/btTR"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/bt_style_xml"

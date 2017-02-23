@@ -62,7 +62,9 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
         listView = (ListView) findViewById(R.id.list_view);
         View view = getLayoutInflater().inflate(layout.list_view_header, null);
 
+       // LinearLayout listViewHeader = (LinearLayout)view.findViewById(id.list_view_header);
         LinearLayout listViewHeader = (LinearLayout)view.findViewById(id.list_view_header);
+
         ListViewAdapter listViewAdapter = new ListViewAdapter(this,listResult);
         listView.addHeaderView(listViewHeader);
         listView.setAdapter(listViewAdapter);
@@ -78,9 +80,16 @@ public class ListViewActivity extends AppCompatActivity implements AdapterView.O
 
 
     }
+
+
     public void onItemClick(AdapterView<?> parent, View view, int position, long id){
         Toast.makeText(this, "listView was clicked at position: "+position,Toast.LENGTH_LONG).show();
         Log.d("testListViewActivity",String.valueOf(position));
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

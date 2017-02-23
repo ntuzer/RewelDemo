@@ -3,9 +3,12 @@ package com.ntuzer.reweldemo;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+
+import com.ntuzer.reweldemo.dialog.CustomDialog;
 
 import java.util.ArrayList;
 
@@ -19,7 +22,7 @@ import butterknife.OnClick;
 
 public class DialogActivity extends BaseActivity {
 
-    private int checkedID;
+    public static int checkedID;
 
     @BindView(R.id.rdg) RadioGroup radioGroup;
     @OnClick(R.id.dialog_ok)
@@ -47,9 +50,28 @@ public class DialogActivity extends BaseActivity {
                 inputDialog();
                 break;
             case R.id.rb8:
+                customDialog();
                 break;
             default:
         }
+    }
+
+    private void customDialog() {
+
+
+        final CustomDialog  dialog = new CustomDialog(this, new CustomDialog.ICustomDialogEventListener() {
+            @Override
+            public void onClickListener() {
+
+                Intent intent = new Intent();
+                intent.putExtra("message","ViewPager");
+                setResult(RESULT_OK,intent);
+                finish();
+            }
+        });
+
+        dialog.setTitle("TestTitle");
+        dialog.show();
     }
 
     private void inputDialog() {
@@ -223,8 +245,10 @@ public class DialogActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedID) {
+                DialogActivity.checkedID = checkedID;
                 toastShort("You checked the RadioButton"+checkedID);
             }
         });

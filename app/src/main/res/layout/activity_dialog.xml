@@ -5,7 +5,7 @@
     <RadioGroup
         android:id="@+id/rdg"
         android:layout_width="match_parent"
-        android:layout_height="350dp">
+        android:layout_height="400dp">
 
         <RadioButton
             android:id="@+id/rb1"
@@ -62,7 +62,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:gravity="left|center_vertical"
-            android:text="NormalDialog"/>
+            android:text="CustomDialog"/>
 
 
     </RadioGroup>
