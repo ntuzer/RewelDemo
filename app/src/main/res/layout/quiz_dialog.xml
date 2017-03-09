@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Quiz 4 Title"
+            android:layout_gravity="top"
+            android:gravity="center"
+            android:textSize="36sp"/>
+
+
+        <RadioGroup
+            android:id="@+id/quiz_rdg2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <RadioButton
+                android:id="@+id/quiz2_rb1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:text="Button 2"/>
+            <RadioButton
+                android:id="@+id/quiz2_rb2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:gravity="left|center_vertical"
+                android:text="Button 3"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/quiz_cancel2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="CANCEL"/>
+            <Button
+                android:id="@+id/quiz_ok2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="OK"/>
+
+        </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

@@ -53,6 +53,7 @@
         android:orientation="horizontal"
         android:background="@android:color/holo_green_light">
 
+        <!--These imagebuttons are the bottom toolbar-->
         <ImageButton
             android:id="@+id/bt1"
             android:layout_width="0dp"
@@ -60,6 +61,7 @@
             android:layout_weight="1"
             android:layout_margin="6dp"
             android:background="@color/white"/>
+
         <ImageButton
             android:id="@+id/bt2"
             android:layout_width="0dp"
@@ -77,14 +79,43 @@
     </LinearLayout>
 
 
-    <ListView
-        android:id="@+id/listview"
+    <FrameLayout
+        android:id="@+id/main_fl"
         android:layout_above="@id/tool_bar"
         android:layout_below="@id/titlebar"
-        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         >
 
-    </ListView>
+        <Button
+            android:id="@+id/main_timer_bt"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="Timer"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+        <Button
+            android:id="@+id/main_anim_BT"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="Animation"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/main_anim2_BT"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="Animator"
+            android:textAllCaps="false"
+            android:textSize="20sp"/>
+        <Button
+            android:id="@+id/quiz4"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:text="Quiz 4"
+            android:textSize="20sp"
+            android:textAllCaps="false"/>
+    </FrameLayout>
 </RelativeLayout>

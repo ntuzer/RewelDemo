@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <Button
+        android:id="@+id/animator_bt_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:padding="10dp"
+        android:text="start anim"
+        />
+
+    <Button
+        android:id="@+id/animator_bt_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"
+        android:text="cancel anim"
+        />
+    <TextView
+        android:id="@+id/animator_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/holo_orange_light"
+        android:text="Hello World"/>
+
+    <GridLayout
+        android:orientation="horizontal"
+        android:id="@+id/animator_bottom"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:useDefaultMargins="true"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="120dp">
+        <Button
+            android:id="@+id/animator_trans"
+            android:padding="10dip"
+            android:layout_width="110dp"
+            android:text="trans"/>
+
+        <Button
+            android:id="@+id/animator_scale"
+            android:padding="10dip"
+            android:gravity="center"
+            android:layout_width="110dp"
+            android:text="scale"/>
+
+        <Button
+            android:id="@+id/animator_color"
+            android:padding="10dip"
+            android:gravity="center"
+            android:layout_width="110dp"
+            android:text="color"/>
+
+        <Button
+            android:id="@+id/animator_char"
+            android:padding="10dip"
+            android:gravity="center"
+            android:layout_width="110dp"
+            android:text="char"/>
+        <Button
+            android:id="@+id/animator_alpha"
+            android:padding="10dip"
+            android:gravity="center"
+            android:layout_width="110dp"
+            android:text="alpha"/>
+        <Button
+            android:id="@+id/animator_rotation"
+            android:padding="10dip"
+            android:gravity="center"
+            android:layout_width="110dp"
+            android:text="rotation"/>
+    </GridLayout>
+</RelativeLayout>

@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
@@ -23,6 +25,26 @@ import butterknife.OnClick;
 public class DialogActivity extends BaseActivity {
 
     public static int checkedID;
+    private final int DIALOG = 12345;
+
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case DIALOG:
+                    Bundle bundle = msg.getData();
+                    String s = bundle.getString("msg");
+                    toastShort("Dialog message: " + s);
+                    //toastShort("");
+                    break;
+                default:
+            }
+
+
+            super.handleMessage(msg);
+        }
+    };
+
 
     @BindView(R.id.rdg) RadioGroup radioGroup;
     @OnClick(R.id.dialog_ok)
@@ -62,7 +84,6 @@ public class DialogActivity extends BaseActivity {
         final CustomDialog  dialog = new CustomDialog(this, new CustomDialog.ICustomDialogEventListener() {
             @Override
             public void onClickListener() {
-
                 Intent intent = new Intent();
                 intent.putExtra("message","ViewPager");
                 setResult(RESULT_OK,intent);
@@ -112,7 +133,15 @@ public class DialogActivity extends BaseActivity {
                         e.printStackTrace();
                     }
                 }
+           //     toastShort("Downloading Success");
+                Bundle bundle = new Bundle();
+                bundle.putString("msg","Download success");
+                Message msg = Message.obtain();
+                msg.what = DIALOG;
+                msg.setData(bundle);
+                mHandler.sendMessage(msg);
                 progressDialog.cancel();
+
             }
         }).start();
     }

@@ -12,18 +12,19 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
         android:text="A"
         android:textSize="100dp"
-        android:textAlignment="center"/>
+        android:gravity="center"
+        android:layout_alignParentTop="true"/>
 
     <LinearLayout
         android:id="@+id/toLetterBar"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal"        >
 
         <ImageButton
             android:id="@+id/toA"

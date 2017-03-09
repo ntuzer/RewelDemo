@@ -29,14 +29,11 @@ public class ViewPager2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager2);
-
-
-
         initial();
     }
 
     private void initial(){
-        viewPager = (ViewPager) findViewById(R.id.view_pager2);
+        viewPager = (ViewPager) findViewById(R.id.view_pager3);
         fragmentList.add(new OneImageFragment());
         fragmentList.add(new TwoImageFragment());
         fragmentList.add(new ThreeImageFragment());

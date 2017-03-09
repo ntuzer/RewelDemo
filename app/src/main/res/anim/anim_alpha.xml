@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<alpha xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromAlpha="1.0"
+    android:toAlpha="0.1"
+    android:duration="2000"
+    android:fillAfter="true"
+    android:interpolator="@android:anim/accelerate_interpolator">
+</alpha>
+
+    <!--  alpha animation
+            float：
+                fromAlpha:  start
+                toAlpha:   end
+
+                0.0 full transparent
+                1.0  non-transparent
+
+                duration: duration time(long)
+                scale: millisecond
+
+                fillAfter="true": stay at the last frame
+                fillBefore="true" stay at the first frame
+
+        Interpolator:
+            AccelerateDecelerateInterpolator   the rate of change starts and ends slowly but accelerates through the middle
+            AccelerateInterpolator             the rate of change starts out slowly and and then accelerates
+            AnticipateInterpolator             the change starts backward then flings forward
+            AnticipateOvershootInterpolator    the change starts backward then flings forward and overshoots the target value and finally goes back to the final value.
+            BounceInterpolator                 the change bounces at the end
+            CycleInterpolator                  Repeats the animation for a specified number of cycles. The rate of change follows a sinusoidal pattern.
+            DecelerateInterpolator             the rate of change starts out quickly and and then decelerates
+            LinearInterpolator                 the rate of change is constant
+            OvershootInterpolator              the change flings forward and overshoots the last value then comes back
+    -->
